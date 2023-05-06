@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+int hello(void);
+int calculate(int amount);
+int fruits(int apple, int fruits);
 int main(void)
 {
   printf("Hello\n");
@@ -13,7 +16,33 @@ int main(void)
 
   int number;
   scanf("%d", &number);
-  printf("入力された値は %d です", number);
+  printf("入力された値は %d です\n", number);
+
+  hello();
+  calculate(1000);
+
+  int fruitsAmount;
+  fruitsAmount = fruits(3, 2);
+  printf("%d\n", fruitsAmount);
 
   return 0;
+}
+
+int hello(void)
+{
+  printf("ありがとう\n");
+  return 0;
+}
+
+int calculate(int amount)
+{
+  printf("%f\n", amount * 1.1);
+  return 0;
+}
+
+int fruits(int apple, int orange)
+{
+  int amount;
+  amount = (apple * 300) + (orange * 300);
+  return amount;
 }
