@@ -25,6 +25,19 @@ int main(void)
   fruitsAmount = fruits(3, 2);
   printf("%d\n", fruitsAmount);
 
+  int array1[10] = {1, 2, 3, 4, 5};
+  int array2[] = {1, 2, 3, 4, 5};
+  printf("%d\n", array1[4]);
+  printf("%d\n", array2[4]);
+
+  int i;
+  for (i = 0; i < sizeof(array2) / sizeof(array2[0]); i++)
+  {
+    printf("%d番目：%d\n", i, array2[i]);
+  }
+  printf("%lu\n", sizeof(array2));
+  printf("%lu\n", sizeof(array2[0]));
+
   return 0;
 }
 
