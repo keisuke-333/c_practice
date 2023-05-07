@@ -5,6 +5,7 @@
 int hello(void);
 int calculate(int amount);
 int fruits(int apple, int fruits);
+void calc(int x, int y, int *a1, int *a2);
 int main(void)
 {
   printf("Hello\n");
@@ -68,6 +69,24 @@ int main(void)
   int iii = strlen(str7);
   printf("%d\n", iii);
 
+  int banana = 10;
+  int *hoge;
+  hoge = &banana;
+  printf("%d\n", banana);
+  printf("%p\n", hoge);
+
+  int *p, q;
+  p = &q;
+  *p = 15;
+  printf("%d\n", *p);
+  printf("%d\n", q);
+
+  int addition;
+  int subtraction;
+  calc(30, 10, &addition, &subtraction);
+  printf("%d\n", addition);
+  printf("%d\n", subtraction);
+
   return 0;
 }
 
@@ -88,4 +107,10 @@ int fruits(int apple, int orange)
   int amount;
   amount = (apple * 300) + (orange * 300);
   return amount;
+}
+
+void calc(int x, int y, int *a1, int *a2)
+{
+  *a1 = x + y;
+  *a2 = x - y;
 }
