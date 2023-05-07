@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int hello(void);
 int calculate(int amount);
@@ -37,6 +39,34 @@ int main(void)
   }
   printf("%lu\n", sizeof(array2));
   printf("%lu\n", sizeof(array2[0]));
+
+  char c = 'A';
+  printf("%c\n", c);
+
+  char str1[5] = {'J', 'o', 'h', 'n', '\0'};
+  printf("%s\n", str1);
+  char str2[] = "John";
+  printf("%s\n", str2);
+  char str3[] = "123";
+  int num = atoi(str3);
+  printf("%d\n", num);
+  char str4[10];
+  strcpy(str4, "Mike");
+  printf("%s\n", str4);
+  char str5[10] = "Star";
+  char str6[] = "Wars";
+  strcat(str5, str6);
+  printf("%s\n", str5);
+
+  char str7[20];
+  char str8[] = "Star";
+  char str9[] = "Wars";
+  int ii = 3;
+  sprintf(str7, "%s %s %d\n", str8, str9, ii);
+  printf("%s", str7);
+
+  int iii = strlen(str7);
+  printf("%d\n", iii);
 
   return 0;
 }
