@@ -15,6 +15,13 @@ struct Fruits
   int orange;
 };
 
+typedef struct
+{
+  int onigiri;
+  int bread;
+  int burger;
+} Food;
+
 struct Test
 {
   char name[32];
@@ -79,6 +86,14 @@ int main(void)
   line();
   show();
   line();
+
+  typedef unsigned int seisu;
+  seisu number = 10;
+  printf("%d\n", number);
+
+  Food store2;
+  store2.bread = 100;
+  printf("パンの金額：%d\n", store2.bread);
 
   return 0;
 }
