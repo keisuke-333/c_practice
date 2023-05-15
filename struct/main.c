@@ -15,6 +15,14 @@ struct Fruits
   int orange;
 };
 
+void price(struct Fruits store)
+{
+  printf("リンゴの金額：%d\n", store.apple);
+  printf("バナナの金額：%d\n", store.banana);
+  printf("オレンジの金額：%d\n", store.orange);
+  return;
+};
+
 int main(void)
 {
   struct Student Tarou;
@@ -27,5 +35,7 @@ int main(void)
 
   struct Fruits store1 = {150, 100, 200};
   printf("apple:%d, banana:%d, orange%d\n", store1.apple, store1.banana, store1.orange);
+  price(store1);
+
   return 0;
 }
