@@ -15,6 +15,20 @@ struct Fruits
   int orange;
 };
 
+struct Test
+{
+  char name[32];
+  int kokugo;
+  int sansu;
+  int eigo;
+};
+
+struct Test student[3] = {
+    {"一郎", 60, 70, 80},
+    {"二郎", 70, 90, 85},
+    {"三郎", 80, 78, 90},
+};
+
 void price(struct Fruits store)
 {
   printf("リンゴの金額：%d\n", store.apple);
@@ -23,6 +37,30 @@ void price(struct Fruits store)
   return;
 };
 
+void line(void)
+{
+  int i;
+  for (i = 0; i < 50; i++)
+  {
+    printf("-");
+  }
+  printf("\n");
+  return;
+};
+
+void show(void)
+{
+  int i;
+  for (i = 0; i < 3; i++)
+  {
+    printf("%8s %8d %8d %8d\n", student[i].name, student[i].kokugo, student[i].sansu, student[i].eigo);
+  }
+  return;
+}
+
+void price(struct Fruits store);
+void line(void);
+void show(void);
 int main(void)
 {
   struct Student Tarou;
@@ -36,6 +74,11 @@ int main(void)
   struct Fruits store1 = {150, 100, 200};
   printf("apple:%d, banana:%d, orange%d\n", store1.apple, store1.banana, store1.orange);
   price(store1);
+
+  printf("%10s %10s %10s %10s\n", "名前", "国語", "算数", "英語");
+  line();
+  show();
+  line();
 
   return 0;
 }
