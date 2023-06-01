@@ -21,5 +21,10 @@ int main(void)
   printf("%d\n", *(int *)vp);
   printf("%d\n", *ip);
 
+  int a2;
+  void *b2 = &a2;
+  *(int *)b2 = 30;
+  printf("%d\n", a2);
+
   return 0;
 }
