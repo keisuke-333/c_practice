@@ -11,5 +11,15 @@ int main(void)
   printf("%p\n", b);
   printf("%p\n", &b);
 
+  int i = 10;
+  int *ip = &i;
+  void *vp;
+
+  vp = ip;
+  printf("%p\n", vp);
+  printf("%p\n", ip);
+  printf("%d\n", *(int *)vp);
+  printf("%d\n", *ip);
+
   return 0;
 }
