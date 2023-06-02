@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -25,6 +26,18 @@ int main(void)
   void *b2 = &a2;
   *(int *)b2 = 30;
   printf("%d\n", a2);
+
+  int *a3;
+  a3 = malloc(sizeof(int));
+  if (a3 == NULL)
+  {
+    printf("failed\n");
+  }
+  else
+  {
+    printf("success\n");
+    free(a3);
+  }
 
   return 0;
 }
