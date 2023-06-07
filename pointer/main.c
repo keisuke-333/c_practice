@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct st
+{
+  int a;
+  int b;
+};
+
+typedef struct
+{
+  int a;
+  int b;
+} t;
+
 int main(int argc, char *argv[])
 {
   int a = 2;
@@ -91,6 +103,19 @@ int main(int argc, char *argv[])
     printf("%s\n", argv[3]);
     printf("%s\n", *(argv + 3));
   }
+
+  struct st d = {5, 10};
+  struct st *p1 = &d;
+  printf("%d\n", (*p1).a);
+  printf("%d\n", (*p1).b);
+  printf("%d\n", p1->a);
+  printf("%d\n", p1->b);
+
+  t *p2;
+  p2 = malloc(sizeof(t));
+  p2->a = 3;
+  printf("%d\n", p2->a);
+  free(p2);
 
   return 0;
 }
