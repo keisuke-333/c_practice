@@ -117,5 +117,12 @@ int main(int argc, char *argv[])
   printf("%d\n", p2->a);
   free(p2);
 
+  int a8 = 10;
+  int *a9 = &a8;
+  int **a10 = &a9;
+  printf("%d\n", **a10);
+  **a10 = 100;
+  printf("%d\n", a8);
+
   return 0;
 }
